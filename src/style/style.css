@@ -1,0 +1,295 @@
+/* Landing_Page */
+.jp_landing_page_conatiner {
+    background-image: url(../assets//-mage-bg.png);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jp__heading {
+    font-size: 70px;
+}
+
+.jp__img_phone {
+    position: absolute;
+    width: 270px;
+    height: 365px;
+    left: 750px;
+    top: 300px;
+}
+
+.jp__img_pc {
+    position: absolute;
+    width: 550px;
+    height: 441px;
+    left: 840px;
+    top: 200px;
+}
+
+/* Landing Page Media Screen */
+/* handphone */
+@media (min-width: 320px) and (max-width: 767px) {
+    .jp_landing_page_conatiner {
+        background-image: url(../assets//-mage-bg.png);
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .jp__heading {
+        font-size: 30px;
+    }
+    
+    .jp__img_phone {
+        position: absolute;
+        width: 155px;
+        height: 190px;
+        left: 10px;
+        top: 170px;
+    }
+    
+    .jp__img_pc {
+        position: absolute;
+        width: 310px;
+        height: 250px;
+        left: 60px;
+        top: 100px;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .jp_landing_page_conatiner {
+        background-image: url(../assets//-mage-bg.png);
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    
+    .jp__heading {
+        font-size: 70px;
+    }
+    
+    .jp__img_phone {
+        position: absolute;
+        width: 270px;
+        height: 320px;
+        left: 50px;
+        top: 250px;
+    }
+    
+    .jp__img_pc {
+        position: absolute;
+        width: 500px;
+        height: 390px;
+        left: 150px;
+        top: 150px;
+    }
+}
+
+
+/* --------Dasboard---------- */
+/* handphone */
+@media (min-width: 320px) and (max-width: 767px) {
+   .jp__dasboard__side_bar {
+       display: none;
+   }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .jp__dasboard__side_bar {
+        display: none;
+    }
+}
+
+
+/* -------Create_Link-------- */
+.jp__input_area .input-data {
+    border-radius: 10px;
+    /* height: 50vh; */
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.input-data::-webkit-scrollbar {
+        display: none;
+}
+
+.jp__links_link {
+    background-color: #ECECEC;
+    border-radius: 8px;
+}
+
+.jp__links_link input {
+    background-color: #ECECEC;
+}
+
+.jp__input_area .input-data input {
+    border: none;
+    font-size: 20px;
+    border-bottom: 2px solid silver;
+    box-shadow: none;
+}
+
+.jp__input_area .input-data input:focus {
+    outline-width: 0;
+}
+
+.jp_temp {
+    position: absolute;
+    width: 570px;
+    height: 578px;
+    left: 910px;
+    top: 130px;
+}
+
+.jp_input-data-2 {
+    position: absolute;
+    width: 209px;
+    height: 421px;
+    left: 1091px;
+    top: 209px;
+    border-radius: 25px;
+    overflow-y: scroll;
+}
+
+.jp_input-data-2::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* handphone-cretea-link */
+@media (min-width: 320px) and (max-width: 767px){
+    .jp__create_link_side_bar {
+        display: none;
+    }
+
+    .jp__input_area .input-data {
+        border-radius: 10px;
+        height: 50vh;
+        overflow-y: scroll;
+    }
+    
+    .input-data::-webkit-scrollbar {
+            display: none;
+    }
+    
+    .jp__links_link {
+        background-color: #ECECEC;
+        border-radius: 8px;
+    }
+    
+    .jp__links_link input {
+        background-color: #ECECEC;
+    }
+    
+    .jp__input_area .input-data input {
+        border: none;
+        font-size: 18px;
+        border-bottom: 2px solid silver;
+        box-shadow: none;
+    }
+    
+    .jp__input_area .input-data input:focus {
+        outline-width: 0;
+    }
+
+    .jp__create_link_image_area img {
+        width: 360px;
+
+    }
+}
+
+
+
+/* --------Account---------------- */
+.jp_account_input_data input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 25px;
+    border-bottom: 2px solid silver;
+    box-shadow: none; 
+}
+
+.jp_account_input_data input:focus {
+    outline-width: 0;
+}
+
+/* handphone */
+@media (min-width: 320px) and (max-width: 767px){
+    .jp__account__side_bar{
+        display: none;
+    }
+
+    .jp_account_input_data {
+        border-radius: 8px;
+    }
+
+    .jp_account_input_data input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        font-size: 20px;
+        border-bottom: 2px solid silver;
+        box-shadow: none; 
+    }
+
+    .jp_account_input_data input:focus {
+        outline-width: 0;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1024px){
+    .jp__account__side_bar{
+        display: none;
+    }
+
+    .jp_account_input_data {
+        border-radius: 8px;
+    }
+
+    .jp_account_input_data input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        font-size: 20px;
+        border-bottom: 2px solid silver;
+        box-shadow: none; 
+    }
+
+    .jp_account_input_data input:focus {
+        outline-width: 0;
+    }
+}
+
+
+/* ----------Links----------------- */
+.jp_links_input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    font-weight: 300;
+    border-bottom: 2px solid silver;
+    box-shadow: none; 
+}
+
+.jp_links_input:focus {
+    outline-width: 0;
+}
+
+.jp__count_link {
+    border-radius: 15px;
+}
+
+/* Preview */
