@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { API } from '../config/api'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 // style
 import '../style/style.css'
@@ -35,13 +35,13 @@ const Publish = () => {
     }, []);    
 
     const redidectExternal = async (url, e) => {
-        
         try {
+            e.preventDefault()
             console.log(preview.id);
             const response = await API.patch(`/view/${preview.id}`);
             window.location.href = window.open(`${url}` , '_blank');
             console.log(response);
-            Navigate("/links")
+            navigate("/links")
         } catch (error) {
             console.log(error);
         }
