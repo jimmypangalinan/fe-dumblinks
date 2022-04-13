@@ -34,9 +34,8 @@ const Publish = () => {
         getPreview()
     }, []);    
 
-    const redidectExternal = async (url, e) => {
+    const redidectExternal = async (url) => {
         try {
-            e.preventDefault()
             console.log(preview.id);
             const response = await API.patch(`/view/${preview.id}`);
             window.location.href = window.open(`${url}` , '_blank');
