@@ -25,7 +25,7 @@ const Dasboard = () => {
                 </div>
 
                 <div className='col col-lg-9'>
-                    <Navbar_Mobile />
+                    {/* <Navbar_Mobile /> */}
                     <div className='row bg-white py-3 ms-lg-4 ms-sm-3'>
                         <h3>Template</h3>
                     </div>

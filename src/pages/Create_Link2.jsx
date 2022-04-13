@@ -84,6 +84,7 @@ const Create_Link = () => {
             formBrand.set("uniqueLink", unique_id.slice(0,8));
 
             const response = await API.post('/add-group', formBrand, config);
+            console.log(response);
 
             const idBrand = response.data.groups.id;
 
@@ -96,6 +97,7 @@ const Create_Link = () => {
                 formLinks.set("idBrand", idBrand);
 
                 const response = await API.post('/add-link', formLinks, config)
+                console.log(response);
             }
 
             if (response.status == 201) {
