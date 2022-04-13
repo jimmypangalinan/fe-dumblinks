@@ -6,6 +6,7 @@ import '../style/style.css';
 
 // components
 import Side_Bar from '../components/Side_Bar';
+import Navbar_Mobile from '../components/Navbar_Mobile';
 
 const Account = () => {
 
@@ -117,7 +118,8 @@ const Account = () => {
                     <Side_Bar />
                 </div>
                 <div className='col-lg-9'>
-                    <div className='row bg-white py-3 ms-lg-4'>
+                <Navbar_Mobile />
+                    <div className='row bg-white py-3 ms-lg-4 ms-sm-3'>
                         <h3>My Account</h3>
                     </div>
 

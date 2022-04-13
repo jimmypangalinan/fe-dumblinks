@@ -14,6 +14,7 @@ const Publish = () => {
     const { id } = useParams();
     console.log(id);
 
+    const [path, setPath] = useState()
     const [preview, setPreview] = useState();
     console.log(preview);
 
@@ -21,6 +22,7 @@ const Publish = () => {
         try {
             const response = await API.get(`/url/${id}`);
             setPreview(response.data.data.group);
+            setPath(response.data.data.path);
             console.log(response);
         } catch (error) {
             console.log(error);
@@ -50,7 +52,7 @@ const Publish = () => {
                 <div className='col-10 col-lg-6 offset-lg-3 offset-1 text-center '>
                     <div className='row d-flex justify-content-center pt-5 pb-2' >
                         {preview ?
-                            <img src={`http://localhost:5000/uploads/${preview.imgBrand}`}
+                            <img src={path + preview.imgBrand}
                                 alt="foto"
                                 style={{
                                     maxWidth: 150,
@@ -75,7 +77,7 @@ const Publish = () => {
                             <div className='row py-2 bg-dark rounded mb-1' key={item.id}>
                                 <div className='col-1'>
                                     <img
-                                        src={`http://localhost:5000/uploads/${item.icon}`}
+                                        src={path + item.icon}
                                         alt="icon-fb"
                                         className='p-1 bg-white'
                                         style={{

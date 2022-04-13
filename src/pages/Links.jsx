@@ -7,19 +7,22 @@ import view from '../assets/icons/view.png'
 import edit from '../assets/icons/edit.png'
 import del from '../assets/icons/delete.png'
 
+import Navbar_Mobile from '../components/Navbar_Mobile';
+
 import { API } from '../config/api'
 import { useNavigate } from 'react-router-dom'
 
 const Links = () => {
 
     const navigate = useNavigate()
-
+    const [path, setPath] = useState()
     const [dataBrand, setDataBrand] = useState([]);
 
     const getBrand = () => {
         API.get(`/groups`).then(res => {
             console.log(res);
             setDataBrand(res.data.data.groups)
+            setPath(res.data.data.path)
         })
             .catch(err => {
                 console.log(err);
@@ -37,7 +40,7 @@ const Links = () => {
         console.log(response);
         getBrand()
 
-        if(response.status == 201){
+        if (response.status == 201) {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -45,7 +48,7 @@ const Links = () => {
                 showConfirmButton: false,
                 timer: 3000
             })
-        }else{
+        } else {
             Swal.fire({
                 position: 'center',
                 icon: 'error',
@@ -53,36 +56,41 @@ const Links = () => {
                 showConfirmButton: false,
                 timer: 3000
             })
-  
+
         }
-        
+
     }
 
 
     return (
         <div className='section__padding bg-white'>
             <div className='row'>
-                <div className='col-3 vh-100 bg-info'>
+                <div className='col-3 vh-100 bg-info jp__account__side_bar'>
                     <Side_Bar />
                 </div>
-                <div className='col-9'>
-                    <div className='row bg-white py-3 ms-4 '>
+                <div className='col col-lg-9'>
+                <Navbar_Mobile />
+                    <div className='row bg-white py-3 ms-lg-4 ms-sm-3'>
                         <h3>My Links</h3>
                     </div>
+
                     <div className='row bg-light pt-4 mb-3 '>
+
                         <div className='d-flex align-items-center ms-4'>
+
                             <div className='col ms-5'>
                                 <span className='fs-5 me-2'>All Links</span>
                                 <span className='bg-warning px-3 py-2 mx-1 jp__count_link '>{dataBrand.length}</span>
                             </div>
 
-                            <div className='col-7 py-3 '>
+                            <div className='col-lg-7 py-3 '>
                                 <input type="text" placeholder=' Find Your Link' className='jp_links_input bg-light' />
                             </div>
 
                             <div className='col-2 ms-4'>
                                 <button className='btn btn-warning'>Search</button>
                             </div>
+
                         </div>
 
                         <div className='mb-5'>
@@ -93,7 +101,7 @@ const Links = () => {
                                             <div className='col-2 ps-5'>
                                                 {brand.imgBrand ?
                                                     <img
-                                                        src={`http://localhost:5000/uploads/${brand.imgBrand}`}
+                                                        src={path + brand.imgBrand}
                                                         alt="icon-link"
                                                         style={{
                                                             maxWidth: 100,

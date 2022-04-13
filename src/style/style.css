@@ -21,14 +21,14 @@
 
 .jp__img_pc {
     position: absolute;
-    width: 550px;
-    height: 441px;
-    left: 840px;
+    width: 40%;
+    height: auto;
+    left: 830px;
     top: 200px;
 }
 
 /* Landing Page Media Screen */
-/* handphone */
+/* handphone lanscap*/
 @media (min-width: 320px) and (max-width: 767px) {
     .jp_landing_page_conatiner {
         background-image: url(../assets//-mage-bg.png);
@@ -41,28 +41,29 @@
     }
     
     .jp__heading {
-        font-size: 30px;
+        font-size: 65px;
+        margin-top: 2rem;
     }
     
-    .jp__img_phone {
+    /* .jp__img_phone {
         position: absolute;
         width: 155px;
         height: 190px;
         left: 10px;
         top: 170px;
-    }
+    } */
     
     .jp__img_pc {
         position: absolute;
-        width: 310px;
-        height: 250px;
-        left: 60px;
+        width: 70%;
+        height: auto;
+        left: 80px;
         top: 100px;
     }
 }
 
 /* tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 992px) {
     .jp_landing_page_conatiner {
         background-image: url(../assets//-mage-bg.png);
         height: 100vh;
@@ -74,23 +75,15 @@
     }
     
     .jp__heading {
-        font-size: 70px;
-    }
-    
-    .jp__img_phone {
-        position: absolute;
-        width: 270px;
-        height: 320px;
-        left: 50px;
-        top: 250px;
+        font-size: 50px;
     }
     
     .jp__img_pc {
         position: absolute;
-        width: 500px;
-        height: 390px;
-        left: 150px;
-        top: 150px;
+        width: 45%;
+        height: auto;
+        left: 495px;
+        top: 320px;
     }
 }
 

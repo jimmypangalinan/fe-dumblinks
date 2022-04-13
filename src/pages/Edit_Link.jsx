@@ -16,8 +16,13 @@ const Edit_Link = () => {
 
     const navigate = useNavigate();
 
+    // path
+    const [path, setPath] = useState()
+    console.log(path);
+
     // data brand from database
     const [dataBrand, setDataBrand] = useState();
+    console.log(dataBrand);
 
     // data links from database
     const [dataLinks, setDataLinks] = useState([]);
@@ -29,9 +34,11 @@ const Edit_Link = () => {
         if (id) {
             try {
                 const response = await API.get(`/group/${id}`);
-                console.log(response);
+
+                setPath(response.data.data.path)
                 setDataBrand(response.data.data);
-                setDataLinks(response.data.data.link);
+                setDataLinks(response.data.data.link)
+
             } catch (error) {
                 console.log(error);
             }
@@ -94,10 +101,10 @@ const Edit_Link = () => {
         try {
             e.preventDefault()
 
-            const config={
-                headers: { 
+            const config = {
+                headers: {
                     "Content-type": "multipart/form-data",
-                    },
+                },
             }
 
             const formBrand = new FormData();
@@ -125,7 +132,7 @@ const Edit_Link = () => {
                     showConfirmButton: false,
                     timer: 3000
                 })
-    
+
             }
 
         } catch (error) {
@@ -223,6 +230,7 @@ const Edit_Link = () => {
         getGroupEdit()
     }, []);
 
+
     return (
         <div className='section__padding bg-white'>
             <div className='row'>
@@ -317,7 +325,7 @@ const Edit_Link = () => {
                                                         type="text"
                                                         placeholder={dataBrand?.description}
                                                         name='description'
-                                                        
+
                                                         onChange={onChangeBrand}
                                                         defaultValue={dataBrand?.description}
                                                     />
@@ -330,7 +338,7 @@ const Edit_Link = () => {
                                                         <div key={index} className='d-flex align-items-center py-1 jp__links_link mb-2'>
                                                             <div className='col-4'>
                                                                 <img
-                                                                    src={`http://localhost:5000/uploads/${item.icon}`}
+                                                                    src={path + item.icon}
                                                                     alt="foto"
                                                                     style={{
                                                                         maxWidth: 100,
@@ -373,34 +381,25 @@ const Edit_Link = () => {
                                                     return (
                                                         <div key={index} className='d-flex align-items-center py-1 jp__links_link mb-2'>
                                                             <div className='col-4'>
-                                                                {links.icon ?
-                                                                    <img
-                                                                        src={URL.createObjectURL(item.icon[0])}
-                                                                        alt="foto"
-                                                                        style={{
-                                                                            maxWidth: 100,
-                                                                            maxheight: 100
-                                                                        }}
-                                                                    /> :
-                                                                    <img
-                                                                        src={add}
-                                                                        alt="foto"
-                                                                        style={{
-                                                                            maxWidth: 100,
-                                                                            maxheight: 100
-                                                                        }}
-                                                                    />
-                                                                }
+
+                                                                <img
+                                                                    src={URL.createObjectURL(item.icon[0])}
+                                                                    alt="foto"
+                                                                    style={{
+                                                                        maxWidth: 100,
+                                                                        maxheight: 100
+                                                                    }}
+                                                                />
                                                             </div>
                                                             <div className='col'>
                                                                 <div className='row pe-3'>
 
                                                                     <div className='d-flex align-items-center'>
                                                                         <label className='col-10'>Title Link</label>
-                                                                        <label
+                                                                        {/* <label
                                                                             className='col-3 text-white bg-danger p-1 rounded'
                                                                             style={{ cursor: 'pointer' }}
-                                                                        >Delete</label>
+                                                                        >Delete</label> */}
                                                                     </div>
                                                                     <input
                                                                         type="text"
@@ -504,9 +503,8 @@ const Edit_Link = () => {
 
                                 <div className="bg-white jp_input-data-2 ">
                                     <div className='row d-felx justify-content-center mt-4'>
-                                        {/* {brand ? */}
 
-
+                                        {/* brand  */}
                                         {brand?.imgBrand ?
                                             <img
                                                 src={URL.createObjectURL(brand.imgBrand[0])}
@@ -541,7 +539,7 @@ const Edit_Link = () => {
                                             <div key={item.id} className='row  mb-1'>
                                                 <div className='col-2 bg-dark offset-1'>
                                                     <img
-                                                        src={`http://localhost:5000/uploads/${item.icon}`}
+                                                        src={path + item.icon}
                                                         alt="icon-fb"
                                                         className='p-1'
                                                         style={{

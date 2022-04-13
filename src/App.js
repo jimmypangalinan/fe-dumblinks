@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-
 // styling
 import './App.css';
 
