@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { API } from '../config/api'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
 // style
 import '../style/style.css'
@@ -10,6 +10,7 @@ import foto from '../assets/foto-preview.jpg'
 
 
 const Publish = () => {
+    const navigate = useNavigate();
 
     const { id } = useParams();
     console.log(id);
@@ -34,12 +35,13 @@ const Publish = () => {
     }, []);    
 
     const redidectExternal = async (url, e) => {
-        console.log(url);
-        window.location.href = window.open(`${url}` , '_blank');
+        
         try {
             console.log(preview.id);
-            const response = await API.patch(`/view/${preview.id}`)
+            const response = await API.patch(`/view/${preview.id}`);
+            window.location.href = window.open(`${url}` , '_blank');
             console.log(response);
+            Navigate("/links")
         } catch (error) {
             console.log(error);
         }
