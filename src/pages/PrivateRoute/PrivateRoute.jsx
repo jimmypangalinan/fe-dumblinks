@@ -10,7 +10,7 @@ function PrivateRoute() {
     console.log(state);
 
   return (
-    state.isLogin? <Outlet/> : <Navigate to = '/check-auth' />
+    state.isLogin? <Outlet/> : <Navigate to = '/' />
   )
 }
 
