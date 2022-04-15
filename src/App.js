@@ -37,19 +37,19 @@ function App() {
 
   console.log(state.isLogin);
 
-  useEffect(() => {
-    if (localStorage.token) {
-      setAuthToken(localStorage.token);
-    }
+  // useEffect(() => {
+  //   if (localStorage.token) {
+  //     setAuthToken(localStorage.token);
+  //   }
 
-    // // Redirect Auth
-    // if (!state.isLogin) {
-    //   navigate("/");
-    // } else {
-    //   navigate("/dasboard");
-    // }
+  //   // // Redirect Auth
+  //   // if (!state.isLogin) {
+  //   //   navigate("/");
+  //   // } else {
+  //   //   navigate("/dasboard");
+  //   // }
     
-  }, [state]);
+  // }, [state]);
 
   const checkUser = async () => {
     try {
