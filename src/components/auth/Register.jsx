@@ -59,6 +59,7 @@ const Register = () => {
                     </Alert>
                 );
                 setMessage(alert);
+                navigate("/dasboard")
             } else {
                 const alert = (
                     <Alert variant="danger" className="py-1">

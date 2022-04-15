@@ -144,7 +144,7 @@ const Links = () => {
                                                             cursor: 'pointer'
                                                         }}
                                                         // onClick={() => navigate(`/preview/${brand.id}`)}
-                                                        onClick={() => navigate(`/${brand.uniqueLink}`)}
+                                                        onClick={() => navigate(`/preview/${brand.uniqueLink}`)}
                                                     />
                                                     <img
                                                         className='mx-1'

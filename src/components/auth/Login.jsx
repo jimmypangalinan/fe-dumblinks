@@ -8,6 +8,9 @@ import { UserContextModal } from '../../context/Modal';
 import { UserContextToken } from "../../context/useContext";
 
 const Login = () => {
+
+    const navigate = useNavigate()
+
     const [token, setToken] = useContext(UserContextToken);
     const [message, setMessage] = useState(null);
 
@@ -55,6 +58,8 @@ const Login = () => {
                     </Alert>
                 );
                 setMessage(alert);
+                navigate("/dasboard")
+                
             } else {
                 const alert = (
                     <Alert variant="danger" className="py-1">

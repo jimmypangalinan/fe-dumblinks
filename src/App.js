@@ -21,6 +21,9 @@ import { API, setAuthToken } from "./config/api";
 // useComtext
 import { UserContextToken } from "./context/useContext";
 
+// private-route
+import PrivateRoute from "./pages/PrivateRoute/PrivateRoute";
+
 
 
 if (localStorage.token) {
@@ -34,23 +37,19 @@ function App() {
 
   console.log(state.isLogin);
 
-  useEffect(() => {
-    if (localStorage.token) {
-      setAuthToken(localStorage.token);
-    }
+  // useEffect(() => {
+  //   if (localStorage.token) {
+  //     setAuthToken(localStorage.token);
+  //   }
 
-    // Redirect Auth
-    if (!state.isLogin) {
-      navigate("/");
-    } 
-
-    if (state.isLogin) {
-      navigate("/dasboard");
-    } else {
-      navigate("/:id");
-    }
-
-  }, [state]);
+  //   // Redirect Auth
+  //   if (!state.isLogin) {
+  //     navigate("/");
+  //   } else {
+  //     navigate("/dasboard");
+  //   }
+    
+  // }, [state]);
 
   const checkUser = async () => {
     try {
@@ -76,6 +75,10 @@ function App() {
 
     } catch (error) {
       console.log(error);
+      return dispatch({
+        type: "AUTH_ERROR",
+      });
+      
     }
   };
 
@@ -87,13 +90,18 @@ function App() {
   return (
     <Routes>
       <Route exact path="/" element={<Landing_Page />} />
+      
+      <Route exact path="/:id" element={<Publish />} />
+
+      <Route exact path='/' element={<PrivateRoute/>}>
       <Route exact path="/dasboard" element={<Dasboard />} />
       <Route exact path="/create-link" element={<Create_Link />} />
       <Route exact path="/edit-link/:id" element={<Edit_Link />} />
       <Route exact path="/account" element={<Account />} />
       <Route exact path="/links" element={<Links />} />
       <Route exact path="/preview/:id" element={<Preview />} />
-      <Route exact path="/:id" element={<Publish />} />
+      </Route>
+      
     </Routes>
   );
 }
