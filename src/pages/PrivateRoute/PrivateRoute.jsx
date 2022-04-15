@@ -7,9 +7,10 @@ import { UserContextToken } from '../../context/useContext'
 function PrivateRoute() {
 
     const [state] = useContext(UserContextToken);
+    console.log(state);
 
   return (
-    state.isLogin? <Outlet/> : <Navigate to = '/check-auth' />
+    state.isLogin? <Outlet/> : <Navigate to = '/register' />
   )
 }
 
