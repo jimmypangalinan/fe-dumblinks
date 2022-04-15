@@ -39,12 +39,17 @@ function App() {
       setAuthToken(localStorage.token);
     }
 
-    // // Redirect Auth
-    // if (!state.isLogin) {
-    //   navigate("/");
-    // } else {
-    //   navigate("/dasboard");
-    // }
+    // Redirect Auth
+    if (!state.isLogin) {
+      navigate("/");
+    } 
+
+    if (state.isLogin) {
+      navigate("/dasboard");
+    } else {
+      navigate("/:id");
+    }
+
   }, [state]);
 
   const checkUser = async () => {
