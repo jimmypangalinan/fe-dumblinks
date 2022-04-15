@@ -37,19 +37,19 @@ function App() {
 
   console.log(state.isLogin);
 
-  // useEffect(() => {
-  //   if (localStorage.token) {
-  //     setAuthToken(localStorage.token);
-  //   }
+  useEffect(() => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
 
-  //   // // Redirect Auth
-  //   // if (!state.isLogin) {
-  //   //   navigate("/");
-  //   // } else {
-  //   //   navigate("/dasboard");
-  //   // }
+    // Redirect Auth
+    if (!state.isLogin) {
+      navigate("/");
+    } else {
+      navigate("/dasboard");
+    }
     
-  // }, [state]);
+  }, [state]);
 
   const checkUser = async () => {
     try {
@@ -91,15 +91,21 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Landing_Page />} />
       <Route exact path="/:id" element={<Publish />} />
+      <Route exact path="/dasboard" element={<Dasboard />} />
+        <Route exact path="/create-link" element={<Create_Link />} />
+        <Route exact path="/edit-link/:id" element={<Edit_Link />} />
+        <Route exact path="/account" element={<Account />} />
+        <Route exact path="/links" element={<Links />} />
+        <Route exact path="/preview/:id" element={<Preview />} />
 
-      <Route exact path='/' element={<PrivateRoute/>}>
+      {/* <Route exact path='/' element={<PrivateRoute/>}>
         <Route exact path="/dasboard" element={<Dasboard />} />
         <Route exact path="/create-link" element={<Create_Link />} />
         <Route exact path="/edit-link/:id" element={<Edit_Link />} />
         <Route exact path="/account" element={<Account />} />
         <Route exact path="/links" element={<Links />} />
         <Route exact path="/preview/:id" element={<Preview />} />
-      </Route>
+      </Route> */}
     </Routes>
   );
 }
