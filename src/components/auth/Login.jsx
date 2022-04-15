@@ -52,13 +52,14 @@ const Login = () => {
 
             // Notification
             if (response.data.status == 200) {
+                navigate("/dasboard")
                 const alert = (
                     <Alert variant="success" className="py-1">
                         Success
                     </Alert>
                 );
                 setMessage(alert);
-                navigate("/dasboard")
+                
                 
             } else {
                 const alert = (
