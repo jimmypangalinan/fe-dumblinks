@@ -21,9 +21,6 @@ import { API, setAuthToken } from "./config/api";
 // useComtext
 import { UserContextToken } from "./context/useContext";
 
-// private-route
-import PrivateRoute from "./pages/PrivateRoute/PrivateRoute";
-
 
 
 if (localStorage.token) {
@@ -97,15 +94,6 @@ function App() {
         <Route exact path="/account" element={<Account />} />
         <Route exact path="/links" element={<Links />} />
         <Route exact path="/preview/:id" element={<Preview />} />
-
-      {/* <Route exact path='/' element={<PrivateRoute/>}>
-        <Route exact path="/dasboard" element={<Dasboard />} />
-        <Route exact path="/create-link" element={<Create_Link />} />
-        <Route exact path="/edit-link/:id" element={<Edit_Link />} />
-        <Route exact path="/account" element={<Account />} />
-        <Route exact path="/links" element={<Links />} />
-        <Route exact path="/preview/:id" element={<Preview />} />
-      </Route> */}
     </Routes>
   );
 }

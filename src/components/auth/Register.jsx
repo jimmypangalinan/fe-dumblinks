@@ -44,7 +44,6 @@ const Register = () => {
 
             // Insert data user to database
             const response = await API.post("/register", body, config);
-            console.log("ini res" + response);
 
             setToken({
                 type: "LOGIN_SUCCESS",
@@ -59,7 +58,6 @@ const Register = () => {
                     </Alert>
                 );
                 setMessage(alert);
-                navigate("/dasboard")
             } else {
                 const alert = (
                     <Alert variant="danger" className="py-1">

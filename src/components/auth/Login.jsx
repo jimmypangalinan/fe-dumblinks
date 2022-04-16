@@ -52,7 +52,6 @@ const Login = () => {
 
             // Notification
             if (response.data.status == 200) {
-                navigate("/dasboard")
                 const alert = (
                     <Alert variant="success" className="py-1">
                         Success
